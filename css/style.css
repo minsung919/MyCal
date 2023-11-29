@@ -1,0 +1,37 @@
+*{margin: 0; padding: 0;}
+
+.logo{
+    top: 24px;
+    left: 252px;
+    width: 109px;
+    height: 53px;
+    text-align: left;
+    font: normal normal bold 40px/53px SamsungKorean;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+.log{
+    top: 37px;
+    left: 1753px;
+    width: 148px;
+    height: 27px;
+    text-align: left;
+    font: normal normal normal 20px/27px SamsungKorean;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+.side{
+    top: 185px;
+    left: 63px;
+    width: 125px;
+    height: 27px;
+    text-align: left;
+    font: normal normal normal 20px/27px SamsungKorean;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
