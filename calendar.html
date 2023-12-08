@@ -99,42 +99,42 @@
                 events: [
                     {
                     title: '먹은 것 기록하기',
-                    start: '2023-11-09'
+                    start: '2023-12-09'
                     },
                     {
                     title: '2000cal',
-                    start: '2023-11-01',
+                    start: '2023-12-01',
                     end: '2022-11-01'
                     },
                     {
                     title: '1900cal',
-                    start: '2023-11-02',
-                    end: '2023-11-02'
+                    start: '2023-12-02',
+                    end: '2023-12-02'
                     },
                     {
                     title: '2100cal',
-                    start: '2023-11-03'
+                    start: '2023-12-03'
                     },
                     {
                     title: '2000cal',
-                    start: '2023-11-04'
+                    start: '2023-12-04'
                     },
                     {
                     title: '2000cal',
-                    start: '2023-11-05'
+                    start: '2023-12-05'
                     },
                     {
                     title: '2000cal',
-                    start: '2023-11-06'
+                    start: '2023-12-06'
                     },
                     {
                     title: '2000cal',
-                    start: '2023-11-07'
+                    start: '2023-12-07'
                     },
                     {
                     title: '2000cal',
                     url: 'http://google.com/',
-                    start: '2023-11-08'
+                    start: '2023-12-08'
                     }
                 ]
             });
@@ -148,6 +148,9 @@
 <style>
     *{
         font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
     body {
       margin: 0;
@@ -155,134 +158,150 @@
       overflow-x: hidden;
       background: #F6F6F6;
     }
-
-    #sidebar {
-      height: 100%;
-      width: 200px;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #fff;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      
-      box-shadow: -6px 2px 20px 0px black
-    }
-
-    /* #sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #000;
-      display: block;
-      transition: 0.3s;
-    } */
-    
-    #sidebar a {
-        padding: 8px 8px 8px 32px;
+    a {
         text-decoration: none;
-        font-size: 20;
-                
-        color: #707070;
-        display: block;
-        transition: 0.3s;
-        width: 100%; /* 메뉴가 찌그러지지 않도록 전체 너비로 설정 */
-        box-sizing: border-box; /* 패딩과 테두리를 요소의 크기에 포함 */
+        color: black;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #703DFF;
+    }
+    body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
-
-    #sidebar a:hover {
-      color: #f1f1f1;
+    header {
+        background-color: #AA97FB;
+        color: #707070;
+        padding: 24px 30px 23px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: -1px 0px 6px 0px black
+    }
+    .logo {
+            margin: 0;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
     }
 
-    #sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
+    .log {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        margin-right: 10px;
     }
 
-    #main {
-      transition: margin-left .5s;
-      padding: 16px;
+    .log li {
+        cursor: pointer;
+        color: #fff;
+    }
+    .container {
+        display: flex;
+        flex: 1;
+    }
+    aside {
+        background-color: #f2f2f2;
+        width: 200px;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+        box-shadow: -5px 9px 14px 0px black
     }
 
-    #openBtn {
-      font-size: 30px;
-      cursor: pointer;
-      position: fixed;
-      left: 10px;
-      top: 10px;
-      z-index: 2;
-      color: #000; /* 초기 색상: 흰색 */
+    .sides {
+        list-style: none;
+        padding: 0;
     }
 
-    #openBtn:hover {
-      color: #909090; /* 호버 시 색상: 검은색 */
+    .sides li {
+        margin-bottom: 20px;
+        cursor: pointer;
     }
+
+    .main {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .calendarContainer{
+        
+        padding-left: 309px;
+        position: absolute;
+        margin-left: 11%;
+        width: 1130px; /* 캘린더 크기*/
+        height: 625px; /*캘린더 스크롤*/
+        margin-top: 6%;
+
+    }
+
+    /* .box {
+        width: calc(50% - 20px);
+        height: 200px;
+        background-color: #AA97FB;
+        margin: 0 0 20px 0;
+    }
+
+    .rounded-box {
+        border-radius: 100px;
+    }
+
+    .box1,
+    .box2,
+    .box3 {
+        width: calc(33.33% - 20px);
+        height: 200px;
+        background-color: #AA97FB;
+        margin: 0 0 20px 0;
+    }
+
+    .box4 {
+        width: calc(33.33% - 20px);
+        height: 200px;
+        background-color: #AA97FB;
+        margin: 0 0 20px 0;
+        margin-right: 67%;
+    } */
+
   </style>  
   </head>
   <body>
+    <header>
+        <h2 class="logo">MyCal</h2>
+        <ul class="log">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+        </ul>
+    </header>
 
 
-      <div style="background: #aa97fb; width: 100%; height: 100px; box-shadow:-3px -5px 20px 2px black";></div>
-      <div class="container">
       
+      <div class="container">
 
-          
-          <div id="sidebar" style="width: 200px;">
-            <ul>
-                
-                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"></a>
-                <hr>
-                <a href="#">프로필</a>
-                <hr>
-                <a href="#">칼로리 캘린더</a>
-                <hr>
-                <a href="#">칼로리 계산기</a>
-                <hr>
-                <a href="#">설정</a>
-                <hr>
-            </ul>
-        </div>
-        
-        <div id="main" style="margin-left: 200px;">
-            <span id="openBtn" onclick="toggleNav()">×</span>
-            
-            <!-- 본문 내용은 여기에 추가 -->
-            <div style="margin-left: 22%; width: 1000px; height: 1150px;" id="calendar"></div>
-        </div>
-        </div>
-        
-
-        
-        <script>
-            
-            function toggleNav() {
-                var sidebar = document.getElementById("sidebar");
-                var main = document.getElementById("main");
-                var openBtn = document.getElementById("openBtn");
-
-                if (sidebar.style.width === "200px") {
-                    sidebar.style.width = "0";
-                    main.style.marginLeft = "0";
-                    openBtn.innerText = "☰"; // 닫혔을 때 아이콘: ☰
-                } else if(sidebar.style.width === "0px") {
-                    sidebar.style.width = "200px";
-                    main.style.marginLeft = "200px";
-                    openBtn.innerText = "×"; // 열렸을 때 아이콘: ×
-                } else {
-                    sidebar.style.width = "0";
-                    main.style.marginLeft = "0";
-                    openBtn.innerText = "☰"; // 닫혔을 때 아이콘: ☰
+            <aside>
+                <ul class="sides">
                     
-                }
-                }
-            
-            </script>
+                    <li><a href="main.html">홈</a></li>
+                    <li><a href="index.html">칼로리 캘린더</a></li>
+                    <li><a href="http://kcal.soseyo.com/">칼로리 계산기</a></li>
+                    <li><a href="http://dogumaster.com/select/menu">야식추천</a></li>
+                    <li><a href="https://vclock.kr/timer/">물/식사 타이머</a></li>
+                    <li><a href="#">프로필</a></li>
+                    <li><a href="#">설정</a></li>
+                    
+                </ul>
 
+            </aside>
+        
+            <div class="calendarContainer">
+                <div id="calendar"></div>
+            </div>
+        </div>
+        
 
     </body>
 </html>
