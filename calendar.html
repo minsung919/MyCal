@@ -3,10 +3,15 @@
   <head>
     <meta charset='utf-8' />
     <link href='calendar/main.css' rel='stylesheet' />
+    <title>칼로리 캘린더</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src='calendar/main.js'></script>
     <script>
     	document.addEventListener('DOMContentLoaded', function() {
         	var calendarEl = document.getElementById('calendar');
+
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 // Tool Bar 목록 document : https://fullcalendar.io/docs/toolbar
                 headerToolbar: {
@@ -89,61 +94,47 @@
                     });
                 },
                 dayMaxEvents: true, // allow "more" link when too many events
+                
                 // 이벤트 객체 필드 document : https://fullcalendar.io/docs/event-object
                 events: [
                     {
-                    title: 'All Day Event',
-                    start: '2022-07-01'
+                    title: '먹은 것 기록하기',
+                    start: '2023-12-09'
                     },
                     {
-                    title: 'Long Event',
-                    start: '2022-07-07',
-                    end: '2022-07-10'
+                    title: '2000cal',
+                    start: '2023-12-01',
+                    end: '2022-11-01'
                     },
                     {
-                    groupId: 999,
-                    title: 'Repeating Event',
-                    start: '2022-07-09T16:00:00'
+                    title: '1900cal',
+                    start: '2023-12-02',
+                    end: '2023-12-02'
                     },
                     {
-                    groupId: 999,
-                    title: 'Repeating Event',
-                    start: '2022-07-16T16:00:00'
+                    title: '2100cal',
+                    start: '2023-12-03'
                     },
                     {
-                    title: 'Conference',
-                    start: '2022-07-11',
-                    end: '2022-07-13'
+                    title: '2000cal',
+                    start: '2023-12-04'
                     },
                     {
-                    title: 'Meeting',
-                    start: '2022-07-12T10:30:00',
-                    end: '2022-07-12T12:30:00'
+                    title: '2000cal',
+                    start: '2023-12-05'
                     },
                     {
-                    title: 'Lunch',
-                    start: '2022-07-12T12:00:00'
+                    title: '2000cal',
+                    start: '2023-12-06'
                     },
                     {
-                    title: 'Meeting',
-                    start: '2022-07-12T14:30:00'
+                    title: '2000cal',
+                    start: '2023-12-07'
                     },
                     {
-                    title: 'Happy Hour',
-                    start: '2022-07-12T17:30:00'
-                    },
-                    {
-                    title: 'Dinner',
-                    start: '2022-07-12T20:00:00'
-                    },
-                    {
-                    title: 'Birthday Party',
-                    start: '2022-07-13T07:00:00'
-                    },
-                    {
-                    title: 'Click for Google',
+                    title: '2000cal',
                     url: 'http://google.com/',
-                    start: '2022-07-28'
+                    start: '2023-12-08'
                     }
                 ]
             });
@@ -153,8 +144,166 @@
         });
 
     </script>
+
+<style>
+    *{
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #F6F6F6;
+      /* zoom: 80%; */
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #703DFF;
+    }
+    body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    header {
+        background-color: #AA97FB;
+        color: #707070;
+        padding: 24px 30px 23px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: -1px 0px 6px 0px black
+    }
+    .logo {
+            margin: 0;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+    }
+
+    .log {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        margin-right: 10px;
+    }
+
+    .log li {
+        cursor: pointer;
+        color: #fff;
+    }
+    .container {
+        display: flex;
+        flex: 1;
+    }
+    aside {
+        background-color: #f2f2f2;
+        width: 200px;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+        box-shadow: -5px 9px 14px 0px black
+    }
+
+    .sides {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sides li {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .main {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .calendarContainer{
+        
+        padding-left: 309px;
+        position: absolute;
+        margin-left: 11%;
+        width: 1130px; /* 캘린더 크기*/
+        height: 625px; /*캘린더 스크롤*/
+        margin-top: 6%;
+
+    }
+
+    /* .box {
+        width: calc(50% - 20px);
+        height: 200px;
+        background-color: #AA97FB;
+        margin: 0 0 20px 0;
+    }
+
+    .rounded-box {
+        border-radius: 100px;
+    }
+
+    .box1,
+    .box2,
+    .box3 {
+        width: calc(33.33% - 20px);
+        height: 200px;
+        background-color: #AA97FB;
+        margin: 0 0 20px 0;
+    }
+
+    .box4 {
+        width: calc(33.33% - 20px);
+        height: 200px;
+        background-color: #AA97FB;
+        margin: 0 0 20px 0;
+        margin-right: 67%;
+    } */
+
+  </style>  
   </head>
   <body>
-    <div id='calendar'></div>
-  </body>
+    <header>
+        <h2 class="logo">MyCal</h2>
+        <ul class="log">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+        </ul>
+    </header>
+
+
+      
+      <div class="container">
+
+            <aside>
+                <ul class="sides">
+                    
+                    <li><a href="main.html">홈</a></li>
+                    <li><a href="index.html">칼로리 캘린더</a></li>
+                    <li><a href="http://kcal.soseyo.com/">칼로리 계산기</a></li>
+                    <li><a href="http://dogumaster.com/select/menu">야식추천</a></li>
+                    <li><a href="https://vclock.kr/timer/">물/식사 타이머</a></li>
+                    <li><a href="#">프로필</a></li>
+                    <li><a href="#">설정</a></li>
+                    
+                </ul>
+
+            </aside>
+        
+            <div class="calendarContainer">
+                <div id="calendar"></div>
+            </div>
+        </div>
+        
+
+    </body>
 </html>
+
