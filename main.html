@@ -63,7 +63,7 @@
         }
 
         aside {
-            background-color: #f2f2f2;
+            background-color: white;
             width: 200px;
             padding: 20px;
             border-right: 1px solid #ccc;
@@ -85,6 +85,18 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            position: relative;}
+
+        .main::before {
+            content: "";
+            display: block;
+            height: 50%;
+            background-color: #e9e9e9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
         }
 
         .box {
@@ -95,24 +107,40 @@
         }
 
         .rounded-box {
-            border-radius: 100px;
+            border-radius: 10px;
         }
 
-        .box1,
-        .box2,
-        .box3 {
-            width: calc(33.33% - 20px);
-            height: 200px;
-            background-color: #AA97FB;
-            margin: 0 0 20px 0;
+        .box1 {
+            width: 650px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('..img/1.png');
         }
+
+        .box2 {
+            width: 400px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('..img/2.png');
+        }
+
+        .box3 {
+            width: 450px;
+            height: 300px;
+        }
+
+
 
         .box4 {
-            width: calc(33.33% - 20px);
-            height: 200px;
+            width: 365px;
+            height: 50px;
             background-color: #AA97FB;
             margin: 0 0 20px 0;
-            margin-right: 67%;
+            margin-right: 60%;
+            background-image: url('..img/3.png');
+
         }
     </style>
 </head>
@@ -140,10 +168,16 @@
         </aside>
 
         <div class="main">
-            <div class="box box1"></div>
-            <div class="box box2"></div>
-            <div class="box box3"></div>
-            <div class="box box4 rounded-box"></div>
+            <div class="box box1 rounded-box">
+
+            </div>
+            <div class="box box2 rounded-box">
+
+            </div>
+            <div class="box box3 rounded-box"></div>
+            <div class="box box4 rounded-box">
+
+            </div>
         </div>
     </div>
 </body>
